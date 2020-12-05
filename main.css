@@ -39,6 +39,32 @@ header {
     padding: 1% 5%;
 }
 
+nav {
+    position: relative;
+}
+
+nav ul ul{
+    display: none;
+    
+}
+
+nav ul li:hover >ul {
+    display: block;
+    color: white;
+    position: absolute;
+    right: 0;
+    margin-top: 10px;
+}
+
+nav ul li:hover ul li {
+    margin: 0;
+    padding: auto;
+}
+
+nav ul ul li a {
+    margin: 0;
+    padding: 0;
+}
 nav ul {
     display: flex;
     justify-content: center;
@@ -46,9 +72,11 @@ nav ul {
     margin: auto;
 }
 
-nav li {
+nav ul li {
     list-style: none;
-    padding: 10px 20px;
+    padding: 10px 0;
+    position: relative;
+    margin: 0 20px;
 }
 
 nav a{
@@ -59,11 +87,24 @@ nav a{
 }
 
 nav a:hover {
-    border-bottom: #be9c79 1px solid;
+    
     color: #be9c79;
-    transition: .3s;
 }
 
+nav a::before {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: #be9c79;
+    position: absolute;
+    bottom: 0;
+    width: 0%;
+    transition: .4s;
+}
+
+nav a:hover::before {
+    width: 100%;
+}
 
 /* container 1 layout */
 
